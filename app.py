@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import requests
 
 # Load data
 @st.cache_data
@@ -10,8 +9,8 @@ def load_data(data_path):
     try:
         data = pd.read_csv(data_path)
     except:
-        data = 
-    return pd.read_csv(data_path)
+        data = pd.read_csv("https://raw.githubusercontent.com/alwolmer/streamlit_projeto/refs/heads/main/time_df.csv")
+    return data
 
 data_path = "time_df.csv"
 df = load_data(data_path)
